@@ -1,0 +1,1 @@
+# elte-ik-jatekfejlesztes-10-orai-munka
