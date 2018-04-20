@@ -7,18 +7,26 @@ var entities = [
     {x: 30, y:20}
 ];
 
+var connections = new Set();
+
 wss.on('connection', function (connection) {
    console.log('valaki belépett!');
+   connections.add(connection);
 
    connection.on('close', function () {
        console.log('valaki kilépett!');
+       connections.delete(connection);
    });
 
    connection.on('message', function (message) {
        console.log('üzenet: ' + message);
    });
 
-   connection.send(JSON.stringify(entities));
+   setInterval(function(){
+       connections.forEach(function(connection){
+            connection.send(JSON.stringify(entities));
+       });
+   }, 100);
 
    //connection.send('szia!');
 });
