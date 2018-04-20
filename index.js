@@ -14,7 +14,7 @@ setInterval(update, 16);
 
 function update() {
 
-    
+    if()
 
     ctx.clearRect(0,0,canvas.width, canvas.height);
     for(const entity of entities){
