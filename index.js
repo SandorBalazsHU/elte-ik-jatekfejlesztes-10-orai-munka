@@ -13,10 +13,11 @@ ws.onmessage = function (event) {
 setInterval(update, 16);
 
 function update() {
+
+    
+
     ctx.clearRect(0,0,canvas.width, canvas.height);
     for(const entity of entities){
         ctx.fillRect(entity.x, entity.y, 100, 100);
     }
 }
-
-console.log("Fut???");

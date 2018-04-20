@@ -26,6 +26,7 @@ wss.on('connection', function (connection) {
        connections.forEach(function(connection){
             connection.send(JSON.stringify(entities));
        });
+       //console.log("elküldve");
    }, 100);
 
    //connection.send('szia!');
