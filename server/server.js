@@ -12,6 +12,7 @@ var connections = new Set();
 wss.on('connection', function (connection) {
    console.log('valaki belépett!');
    connections.add(connection);
+   connections.keys = "";
 
    connection.on('close', function () {
        console.log('valaki kilépett!');
@@ -20,6 +21,7 @@ wss.on('connection', function (connection) {
 
    connection.on('message', function (message) {
        console.log('üzenet: ' + message);
+       connection.keys=message;
    });
 
    setInterval(function(){
@@ -31,3 +33,10 @@ wss.on('connection', function (connection) {
 
    //connection.send('szia!');
 });
+
+setInterval(function(){
+    connections.forEach(function(connection){
+        var message=
+    });
+});
+
